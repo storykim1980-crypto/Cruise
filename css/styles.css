@@ -1839,3 +1839,110 @@ table.data tbody tr:hover { background: rgba(14, 165, 233, 0.06); }
   .chip { min-height: 38px; }
   .lang-switch button, .lang-switch a { padding: 0.5rem 0.8rem; }
 }
+
+
+/* ============================================================
+   OCEAN LIGHT POLISH — ShipSpotting-style clean sea palette
+   (cards / toolbars / chips / buttons / tables unified)
+   ============================================================ */
+:root {
+  --oc-deep: #0d2b45;
+  --oc-700: #12507e;
+  --oc-600: #0a6fbf;
+  --oc-500: #2b8ad4;
+  --oc-tint: #e8f1f9;
+  --oc-line: #d3e0ec;
+  --oc-ink: #1d3348;
+  --oc-body: #40566b;
+  --oc-muted: #64798e;
+  --oc-page: #eef4f9;
+}
+body { background: var(--oc-page); color: var(--oc-body); }
+a { color: var(--oc-600); }
+a:hover { color: var(--oc-700); }
+::selection { background: #bfe0f7; color: var(--oc-deep); }
+
+/* top strip: deep navy like maritime portals */
+.topbar { background: var(--oc-deep); color: #dceaf6; }
+
+/* header controls */
+.lang-switch, .menu-toggle {
+  background: #fff; border: 1px solid var(--oc-line); color: var(--oc-700);
+}
+.lang-switch a { color: var(--oc-body); }
+.lang-switch a.on { color: #fff; background: var(--oc-600); border-radius: 6px; }
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { background: var(--oc-700); }
+
+/* unified white panels */
+.dir-card, .ph-card, .ph-hero, .potd-card, .photo-toolbar, .toolbar,
+.home-hero-stats .stat, .cat-card, .card, .panel, .info-box, .link-box,
+.contrib-row, .side-search-row, .detail-head, .meta-grid {
+  background: #fff;
+  border: 1px solid var(--oc-line);
+  backdrop-filter: none;
+  box-shadow: 0 1px 3px rgba(13, 43, 69, 0.06);
+}
+.dir-card:hover, .ph-card:hover, .potd-card:hover, .cat-card:hover {
+  border-color: #aecde6;
+  box-shadow: 0 6px 18px rgba(13, 43, 69, 0.10);
+}
+
+/* card innards: readable sea-ink text */
+.dir-card h2 a, .dir-title-row a, .ph-head h2 a, .cat-card h3 a { color: var(--oc-deep); }
+.dir-card h2 a:hover, .ph-head h2 a:hover { color: var(--oc-600); }
+.dir-line, .ph-sub, .ph-bio, .cat-card p, .desc, .desc-secondary, .caption,
+.contrib-info > span, .breadcrumb, .count, .dir-count { color: var(--oc-muted); }
+.dir-count, .count { color: var(--oc-700); }
+.ph-stats dt, .dir-specs dt, .stat .label, .dl-grid dt { color: var(--oc-muted); }
+.ph-stats dd, .dir-specs dd, .stat .value, .dl-grid dd { color: var(--oc-ink); }
+.ph-stats, .dir-specs { border-color: var(--oc-line); }
+.dir-thumb, .ph-thumbs a, .dir-placeholder { background: #e6eef5; }
+
+/* POTD card on light */
+.potd-label { color: var(--oc-600); }
+.potd-label .dot { background: var(--oc-600); box-shadow: 0 0 8px rgba(10, 111, 191, 0.55); }
+.potd-title { color: var(--oc-ink); }
+.potd-card .meta, .potd-card p { color: var(--oc-muted); }
+
+/* chips / badges / spec chips */
+.chip { background: #fff; border: 1px solid var(--oc-line); color: var(--oc-700); }
+.chip:hover { background: var(--oc-tint); }
+.chip.on, .chip[aria-pressed="true"] { background: var(--oc-600); border-color: var(--oc-600); color: #fff; }
+.badge { background: var(--oc-tint); border: 1px solid #c6dcec; color: var(--oc-700); }
+.spec-chips span { background: var(--oc-tint); border: 1px solid #c6dcec; color: var(--oc-700); }
+code, .prose pre { background: #f1f6fb; border: 1px solid var(--oc-line); color: var(--oc-700); }
+
+/* inputs & selects */
+.toolbar input, .toolbar select, .photo-toolbar input, .photo-toolbar select,
+.side-search-row input, input[type="search"], input[type="text"], select, textarea {
+  background: #fff; border: 1px solid var(--oc-line); color: var(--oc-ink);
+}
+.toolbar input::placeholder, .side-search-row input::placeholder,
+input::placeholder, textarea::placeholder { color: #93a7ba; }
+.toolbar input:focus, .toolbar select:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid #8fc2e8; outline-offset: 1px; border-color: var(--oc-500);
+}
+
+/* buttons: solid ocean primary / outlined secondary */
+.btn-primary, .btn.primary {
+  background: var(--oc-600); border: 1px solid var(--oc-600); color: #fff;
+}
+.btn-primary:hover, .btn.primary:hover { background: var(--oc-700); border-color: var(--oc-700); }
+.btn-ghost, .btn:not(.primary):not(.btn-primary) {
+  background: #fff; border: 1px solid #bcd2e4; color: var(--oc-700);
+}
+.btn-ghost:hover, .btn:not(.primary):not(.btn-primary):hover { background: var(--oc-tint); }
+
+/* tables */
+table.data th, .ship-specs-table .cell { background: #f4f9fd; color: var(--oc-700); }
+table.data td { color: var(--oc-body); }
+table.data tbody tr:hover { background: #eef6fc; }
+table.data th, table.data td, .ship-specs-table .cell { border-color: var(--oc-line); }
+
+/* mobile dropdown nav */
+.nav { background: #fff; }
+.nav a { color: var(--oc-body); }
+.nav a.on, .nav a:hover { color: var(--oc-600); background: var(--oc-tint); }
+@media (max-width: 1100px) {
+  .nav { border: 1px solid var(--oc-line); box-shadow: 0 10px 26px rgba(13, 43, 69, 0.14); }
+}

@@ -4,7 +4,9 @@ const DS = (() => {
 
   async function load(name) {
     if (cache[name]) return cache[name];
-    const res = await fetch(`${I18N.base()}data/${name}.json`);
+    const meta = document.querySelector('meta[name="tcl-build"]');
+    const v = meta ? meta.content : "";
+    const res = await fetch(`${I18N.base()}data/${name}.json${v ? `?v=${v}` : ""}`);
     if (!res.ok) throw new Error(`Failed to load ${name}.json`);
     cache[name] = await res.json();
     return cache[name];

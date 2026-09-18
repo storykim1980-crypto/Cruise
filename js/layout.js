@@ -40,10 +40,6 @@ const Layout = (() => {
             <span>${brandSub}</span>
           </div>
         </a>
-        <form class="header-search" id="header-search" role="search">
-          <input type="search" name="q" placeholder="${t("searchPlaceholder")}" aria-label="${t("searchAria")}">
-          <button type="submit">${t("searchBtn")}</button>
-        </form>
         <nav class="nav" id="main-nav">
           <a href="index.html" data-nav="home">${t("nav.home")}</a>
           <a href="photos.html" data-nav="photos">${t("nav.photos")}</a>
