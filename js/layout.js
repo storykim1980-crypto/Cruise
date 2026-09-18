@@ -31,16 +31,6 @@ const Layout = (() => {
     const brandSub = t("brandEn");
 
     const headerHTML = `
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div>${t("topbarLeft")} <a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com</a></div>
-        <div>
-          <a href="about.html">${t("topbarRightAbout")}</a>
-          <span style="opacity:.4;margin:0 .45rem">·</span>
-          <a href="photos.html">${t("topbarRightPhotos")}</a>
-        </div>
-      </div>
-    </div>
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="index.html">
@@ -58,6 +48,7 @@ const Layout = (() => {
           <a href="index.html" data-nav="home">${t("nav.home")}</a>
           <a href="photos.html" data-nav="photos">${t("nav.photos")}</a>
           <a href="ships.html" data-nav="ships">${t("nav.ships")}</a>
+          <a href="photographers.html" data-nav="photographers">${t("nav.photographers")}</a>
           <a href="schedule.html" data-nav="schedule">${t("nav.schedule")}</a>
           <a href="terminals.html" data-nav="terminals">${t("nav.terminals")}</a>
           <a href="about.html" data-nav="about">${t("nav.about")}</a>
@@ -91,6 +82,7 @@ const Layout = (() => {
             <a href="photos.html">${t("footerLatest")}</a>
             <a href="photos.html?sort=popular">${t("footerPopular")}</a>
             <a href="ships.html">${t("footerShips")}</a>
+            <a href="photographers.html">${t("contributors")}</a>
             <a href="photos.html">${t("footerCats")}</a>
           </div>
           <div class="footer-col">
@@ -98,17 +90,9 @@ const Layout = (() => {
             ${footerTermLinks(data?.terminals)}
             <a href="schedule.html">${t("footerSchedule")}</a>
           </div>
-          <div class="footer-col">
-            <h4>${t("footerRefs")}</h4>
-            <a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com</a>
-            <a href="https://www.cruisemapper.com/" target="_blank" rel="noopener">CruiseMapper</a>
-            <a href="https://www.marinetraffic.com/" target="_blank" rel="noopener">MarineTraffic</a>
-            <a href="about.html">${t("footerAbout")}</a>
-          </div>
         </div>
         <div class="footer-bottom">
           <span>${t("footerCopy")}</span>
-          <span>${t("footerInspired")}</span>
         </div>
       </div>
     </footer>`;

@@ -3,8 +3,8 @@
   "nameJa": "東京クルーズログ",
   "tagline": "World-class cruise ships, filmed as they reach Tokyo Bay",
   "taglineJa": "世界の客船が、東京湾に着く瞬間を残す",
-  "description": "A bilingual ShipSpotting-inspired photo archive of cruise ships calling at Tokyo. Search by IMO, ship name, terminal and category — then open full metadata for every frame.",
-  "descriptionJa": "ShipSpotting に着想を得た、東京寄港クルーズ客船のフォトアーカイブ。IMO・船名・ターミナル・カテゴリで検索し、1枚ごとのメタデータを残せます。",
+  "description": "A bilingual photo archive of cruise ships calling at Tokyo. Search by IMO, ship name, terminal and category — then open full metadata for every frame.",
+  "descriptionJa": "東京寄港クルーズ客船の日英バイリンガル・フォトアーカイブ。IMO・船名・ターミナル・カテゴリで検索し、1枚ごとのメタデータを残せます。",
   "location": "Tokyo, Japan",
   "author": "TokyoBaySpotter",
   "authorJa": "TokyoBaySpotter",
@@ -15,53 +15,9 @@
     "instagram": "#"
   },
   "stats": {
-    "photos": 10,
-    "ships": 8,
-    "photographers": 1,
-    "portCalls": 12
-  },
-  "inspiredBy": {
-    "name": "ShipSpotting.com",
-    "url": "https://www.shipspotting.com/",
-    "note": "Photo-first archive, IMO linking, More from this ship, categories and rich metadata.",
-    "noteJa": "写真ファーストの構成、IMOリンク、「この船の他の写真」、カテゴリ分類を参考にしています。"
-  },
-  "references": [
-    {
-      "name": "ShipSpotting.com",
-      "url": "https://www.shipspotting.com/",
-      "why": "Global ship photo archive — the UI pattern this site follows.",
-      "whyJa": "世界の船舶写真アーカイブ。本サイトの画面構成の参照元。"
-    },
-    {
-      "name": "CruiseMapper",
-      "url": "https://www.cruisemapper.com/",
-      "why": "Port schedules and ship wiki.",
-      "whyJa": "寄港スケジュールと船舶データベース。"
-    },
-    {
-      "name": "MarineTraffic",
-      "url": "https://www.marinetraffic.com/",
-      "why": "AIS positions and IMO lookup.",
-      "whyJa": "AIS位置情報とIMO番号検索。"
-    },
-    {
-      "name": "VesselFinder",
-      "url": "https://www.vesselfinder.com/",
-      "why": "Clean AIS map.",
-      "whyJa": "見やすいAISマップ。"
-    },
-    {
-      "name": "Cruise Timetables",
-      "url": "https://www.cruisetimetables.com/",
-      "why": "Port-by-port call dates.",
-      "whyJa": "寄港日・入港時刻の情報源。"
-    },
-    {
-      "name": "Tokyo Metropolitan Government — Port",
-      "url": "https://www.kouwan.metro.tokyo.lg.jp/",
-      "why": "Official Tokyo port information.",
-      "whyJa": "東京港の公式情報。"
-    }
-  ]
+    "photos": 20,
+    "ships": 24,
+    "photographers": 3,
+    "portCalls": 32
+  }
 }

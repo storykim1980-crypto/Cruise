@@ -18,7 +18,7 @@ const DS = (() => {
   }
 
   async function all() {
-    const [ships, arrivals, photos, terminals, categories, site, logs] = await Promise.all([
+    const [ships, arrivals, photos, terminals, categories, site, logs, photographers] = await Promise.all([
       load("ships"),
       load("arrivals"),
       load("photos"),
@@ -26,8 +26,9 @@ const DS = (() => {
       load("categories"),
       load("site"),
       load("logs").catch(() => []),
+      load("photographers").catch(() => []),
     ]);
-    return { ships, arrivals, photos, terminals, categories, site, logs };
+    return { ships, arrivals, photos, terminals, categories, site, logs, photographers };
   }
 
   const ship = (ships, id) => ships.find((s) => s.id === id);

@@ -15,7 +15,11 @@
     "class": "Quantum Ultra",
     "homeport": "上海 / シンガポール",
     "notes": "アジアを拠点とするクアンタム・ウルトラ級。東京国際クルーズターミナルに寄港する大型船の代表格。",
-    "tags": ["mega", "royal-caribbean", "quantum"],
+    "tags": [
+      "mega",
+      "royal-caribbean",
+      "quantum"
+    ],
     "accent": "#0ea5e9"
   },
   {
@@ -34,7 +38,10 @@
     "class": "Millennium",
     "homeport": "アジア・季節運航",
     "notes": "ミレニアム級のネームシップ。東京湾での優雅なシルエットが人気。",
-    "tags": ["premium", "celebrity"],
+    "tags": [
+      "premium",
+      "celebrity"
+    ],
     "accent": "#a78bfa"
   },
   {
@@ -43,7 +50,7 @@
     "nameJa": "飛鳥II",
     "operator": "NYK Cruises",
     "operatorJa": "日本郵船クルーズ",
-    "imo": "8913162",
+    "imo": "8701111",
     "built": 1990,
     "gt": 50442,
     "length": 241.0,
@@ -53,7 +60,11 @@
     "class": "Crystal (ex)",
     "homeport": "横浜",
     "notes": "日本を代表するラグジュアリー客船。晴海・竹芝など中型ターミナルにも入港可能。",
-    "tags": ["japanese", "luxury", "nyk"],
+    "tags": [
+      "japanese",
+      "luxury",
+      "nyk"
+    ],
     "accent": "#f59e0b"
   },
   {
@@ -62,7 +73,7 @@
     "nameJa": "ダイヤモンド・プリンセス",
     "operator": "Princess Cruises",
     "operatorJa": "プリンセス・クルーズ",
-    "imo": "9228198",
+    "imo": "9228186",
     "built": 2004,
     "gt": 115875,
     "length": 290.0,
@@ -72,7 +83,10 @@
     "class": "Grand",
     "homeport": "横浜（季節）",
     "notes": "日本発着クルーズでおなじみ。横浜寄港が多いが東京にも入港記録あり。",
-    "tags": ["princess", "japan-homeport"],
+    "tags": [
+      "princess",
+      "japan-homeport"
+    ],
     "accent": "#38bdf8"
   },
   {
@@ -81,7 +95,7 @@
     "nameJa": "アイーダベラ",
     "operator": "AIDA Cruises",
     "operatorJa": "アイーダ・クルーズ",
-    "imo": "9362542",
+    "imo": "9393242",
     "built": 2008,
     "gt": 69203,
     "length": 252.0,
@@ -91,7 +105,10 @@
     "class": "Sphinx",
     "homeport": "ヨーロッパ / アジア季節",
     "notes": "特徴的な船首アートが遠方からでも一目でわかるAIDAのスフィンクス級。",
-    "tags": ["aida", "europe"],
+    "tags": [
+      "aida",
+      "europe"
+    ],
     "accent": "#f472b6"
   },
   {
@@ -100,7 +117,7 @@
     "nameJa": "MSCベリッシマ",
     "operator": "MSC Cruises",
     "operatorJa": "MSCクルーズ",
-    "imo": "9760524",
+    "imo": "9764697",
     "built": 2019,
     "gt": 171598,
     "length": 315.8,
@@ -110,7 +127,10 @@
     "class": "Meraviglia",
     "homeport": "アジア季節運航",
     "notes": "メリヴィリア級。東京国際CTの深いバースを活かした大型寄港の一例。",
-    "tags": ["msc", "mega"],
+    "tags": [
+      "msc",
+      "mega"
+    ],
     "accent": "#22d3ee"
   },
   {
@@ -119,7 +139,7 @@
     "nameJa": "にっぽん丸",
     "operator": "Mitsui O.S.K. Passenger Line",
     "operatorJa": "商船三井客船",
-    "imo": "8701111",
+    "imo": "8804270",
     "built": 1990,
     "gt": 22472,
     "length": 166.7,
@@ -129,7 +149,11 @@
     "class": "Ocean liner style",
     "homeport": "東京・横浜",
     "notes": "クラシックな外観の日本籍客船。晴海ターミナルによく姿を見せる。",
-    "tags": ["japanese", "classic", "mol"],
+    "tags": [
+      "japanese",
+      "classic",
+      "mol"
+    ],
     "accent": "#34d399"
   },
   {
@@ -148,7 +172,373 @@
     "class": "Vista (Cunard)",
     "homeport": "サウサンプトン / 世界周航",
     "notes": "世界周航の途中で東京に寄港する名門キュナード。港の歓迎セレモニーが華やか。",
-    "tags": ["cunard", "world-cruise", "luxury"],
+    "tags": [
+      "cunard",
+      "world-cruise",
+      "luxury"
+    ],
+    "accent": "#eab308"
+  },
+  {
+    "id": "sun-princess",
+    "name": "Sun Princess",
+    "nameJa": "サン・プリンセス",
+    "operator": "Princess Cruises",
+    "operatorJa": "プリンセス・クルーズ",
+    "imo": "9839210",
+    "built": 2024,
+    "gt": 175500,
+    "length": 345.2,
+    "beam": 47.3,
+    "passengers": 4300,
+    "flag": "バミューダ",
+    "class": "Sphere",
+    "homeport": "横浜",
+    "notes": "LNG燃料のプリンセス最新鋭。日本発着クルーズの旗艦として東京国際CTに寄港。",
+    "tags": [
+      "mega",
+      "princess",
+      "lng"
+    ],
+    "accent": "#0ea5e9"
+  },
+  {
+    "id": "queen-anne",
+    "name": "Queen Anne",
+    "nameJa": "クイーン・アン",
+    "operator": "Cunard Line",
+    "operatorJa": "キュナード・ライン",
+    "imo": "9893424",
+    "built": 2024,
+    "gt": 113000,
+    "length": 322.5,
+    "beam": 36.7,
+    "passengers": 2974,
+    "flag": "バミューダ",
+    "class": "Vista (Cunard)",
+    "homeport": "サウサンプトン",
+    "notes": "キュナード3船体制の最新船。2025年以降アジアシーズンに東京寄港。",
+    "tags": [
+      "cunard",
+      "liner",
+      "luxury"
+    ],
+    "accent": "#ef4444"
+  },
+  {
+    "id": "royal-princess",
+    "name": "Royal Princess",
+    "nameJa": "ロイヤル・プリンセス",
+    "operator": "Princess Cruises",
+    "operatorJa": "プリンセス・クルーズ",
+    "imo": "9584724",
+    "built": 2013,
+    "gt": 142714,
+    "length": 329.7,
+    "beam": 38.4,
+    "passengers": 3560,
+    "flag": "バミューダ",
+    "class": "Royal",
+    "homeport": "横浜",
+    "notes": "ロイヤル級ネームシップ。日本周遊と太平洋横断で東京国際CTを常用。",
+    "tags": [
+      "mega",
+      "princess"
+    ],
+    "accent": "#38bdf8"
+  },
+  {
+    "id": "costa-serena",
+    "name": "Costa Serena",
+    "nameJa": "コスタ・セレナ",
+    "operator": "Costa Cruises",
+    "operatorJa": "コスタ・クルーズ",
+    "imo": "9320099",
+    "built": 2007,
+    "gt": 114147,
+    "length": 290.2,
+    "beam": 35.5,
+    "passengers": 3780,
+    "flag": "イタリア",
+    "class": "Concordia",
+    "homeport": "アジア季節運航",
+    "notes": "黄色いファンネルが目印のイタリア船。アジア発着で東京に寄港。",
+    "tags": [
+      "costa",
+      "mega"
+    ],
+    "accent": "#f59e0b"
+  },
+  {
+    "id": "noordam",
+    "name": "Noordam",
+    "nameJa": "ノールダム",
+    "operator": "Holland America Line",
+    "operatorJa": "ホランド・アメリカ・ライン",
+    "imo": "9237125",
+    "built": 2006,
+    "gt": 82348,
+    "length": 285.0,
+    "beam": 32.2,
+    "passengers": 1924,
+    "flag": "オランダ",
+    "class": "Vista (HAL)",
+    "homeport": "バンクーバー / アジア季節",
+    "notes": "クラシカルな白×紺の船体。日本寄港時は晴海・東京国際CTを使用。",
+    "tags": [
+      "hal",
+      "classic"
+    ],
+    "accent": "#2563eb"
+  },
+  {
+    "id": "viking-sea",
+    "name": "Viking Sea",
+    "nameJa": "バイキング・シー",
+    "operator": "Viking Cruises",
+    "operatorJa": "バイキング・クルーズ",
+    "imo": "9686986",
+    "built": 2015,
+    "gt": 47842,
+    "length": 228.3,
+    "beam": 28.8,
+    "passengers": 930,
+    "flag": "ノルウェー",
+    "class": "Viking Star",
+    "homeport": "アジア・北欧",
+    "notes": "大人専用・バルコニー付き小型ラグジュアリー。竹芝など都心バースに対応。",
+    "tags": [
+      "viking",
+      "luxury",
+      "small"
+    ],
+    "accent": "#94a3b8"
+  },
+  {
+    "id": "le-laperouse",
+    "name": "Le Lapérouse",
+    "nameJa": "ル・ラペルーズ",
+    "operator": "Ponant",
+    "operatorJa": "ポナン",
+    "imo": "9770957",
+    "built": 2018,
+    "gt": 10038,
+    "length": 131.4,
+    "beam": 18.4,
+    "passengers": 184,
+    "flag": "フランス",
+    "class": "Explorers",
+    "homeport": "季節運航（日本・南太平洋）",
+    "notes": "ポナンの探検ラグジュアリー。日の出・竹芝の小型バースに寄港。",
+    "tags": [
+      "ponant",
+      "expedition",
+      "luxury"
+    ],
+    "accent": "#1e3a8a"
+  },
+  {
+    "id": "mitsui-ocean-fuji",
+    "name": "Mitsui Ocean Fuji",
+    "nameJa": "三井 オーシャンフジ",
+    "operator": "MOL Mitsui Ocean Cruises",
+    "operatorJa": "三井オーシャンクルーズ",
+    "imo": "9417074",
+    "built": 2009,
+    "gt": 32477,
+    "length": 198.2,
+    "beam": 26.5,
+    "passengers": 458,
+    "flag": "バハマ",
+    "class": "Odyssey (ex-Seabourn)",
+    "homeport": "横浜",
+    "notes": "旧シーボーン・オデッセイを三井が改装。日本発着ラグジュアリーの新星。",
+    "tags": [
+      "mitsui",
+      "luxury",
+      "japanese"
+    ],
+    "accent": "#f43f5e"
+  },
+  {
+    "id": "asuka-iii",
+    "name": "Asuka III",
+    "nameJa": "飛鳥III",
+    "operator": "NYK Cruises",
+    "operatorJa": "日本郵船クルーズ",
+    "imo": "",
+    "built": 2025,
+    "gt": 51950,
+    "length": 230.0,
+    "beam": 29.6,
+    "passengers": 744,
+    "flag": "日本",
+    "class": "Asuka III",
+    "homeport": "横浜",
+    "notes": "飛鳥IIの後継として2025年就航のLNG二元燃料船。日本籍最大のクルーズ客船。",
+    "tags": [
+      "japanese",
+      "luxury",
+      "lng",
+      "nyk"
+    ],
+    "accent": "#dc2626"
+  },
+  {
+    "id": "pacific-world",
+    "name": "Pacific World",
+    "nameJa": "パシフィック・ワールド",
+    "operator": "Peace Boat",
+    "operatorJa": "ピースボート",
+    "imo": "9000259",
+    "built": 1995,
+    "gt": 77499,
+    "length": 261.3,
+    "beam": 32.3,
+    "passengers": 2016,
+    "flag": "パナマ",
+    "class": "Sun (ex-Sun Princess)",
+    "homeport": "横浜",
+    "notes": "元サン・プリンセス。ピースボートの世界一周航海で東京・晴海を拠点に。",
+    "tags": [
+      "peace-boat",
+      "japanese",
+      "classic"
+    ],
+    "accent": "#22c55e"
+  },
+  {
+    "id": "emerald-princess",
+    "name": "Emerald Princess",
+    "nameJa": "エメラルド・プリンセス",
+    "operator": "Princess Cruises",
+    "operatorJa": "プリンセス・クルーズ",
+    "imo": "9332987",
+    "built": 2007,
+    "gt": 113565,
+    "length": 289.9,
+    "beam": 36.0,
+    "passengers": 3080,
+    "flag": "バミューダ",
+    "class": "Grand",
+    "homeport": "シドニー / アジア季節",
+    "notes": "グランド級。オセアニア〜アジア航路で東京に寄港実績。",
+    "tags": [
+      "princess",
+      "mega"
+    ],
+    "accent": "#06b6d4"
+  },
+  {
+    "id": "celebrity-solstice",
+    "name": "Celebrity Solstice",
+    "nameJa": "セレブリティ・ソルスティス",
+    "operator": "Celebrity Cruises",
+    "operatorJa": "セレブリティ・クルーズ",
+    "imo": "9362542",
+    "built": 2008,
+    "gt": 121878,
+    "length": 314.9,
+    "beam": 36.8,
+    "passengers": 2850,
+    "flag": "マルタ",
+    "class": "Solstice",
+    "homeport": "シンガポール / アジア季節",
+    "notes": "ソルスティス級ネームシップ。アジア季節運航で東京国際CTに寄港。",
+    "tags": [
+      "celebrity",
+      "premium"
+    ],
+    "accent": "#8b5cf6"
+  },
+  {
+    "id": "westerdam",
+    "name": "Westerdam",
+    "nameJa": "ウェスターダム",
+    "operator": "Holland America Line",
+    "operatorJa": "ホランド・アメリカ・ライン",
+    "imo": "9226891",
+    "built": 2004,
+    "gt": 82862,
+    "length": 285.0,
+    "beam": 32.2,
+    "passengers": 1964,
+    "flag": "オランダ",
+    "class": "Vista (HAL)",
+    "homeport": "シアトル / アジア季節",
+    "notes": "ヴィスタ級。グランドツアー寄港で東京に来航。",
+    "tags": [
+      "hal",
+      "classic"
+    ],
+    "accent": "#0891b2"
+  },
+  {
+    "id": "regatta",
+    "name": "Regatta",
+    "nameJa": "レガッタ",
+    "operator": "Oceania Cruises",
+    "operatorJa": "オセアニア・クルーズ",
+    "imo": "9210294",
+    "built": 1998,
+    "gt": 30277,
+    "length": 181.0,
+    "beam": 25.5,
+    "passengers": 684,
+    "flag": "マーシャル諸島",
+    "class": "R One",
+    "homeport": "マイアミ / 世界一周",
+    "notes": "Rワン級の名船。世界一周航路で東京（晴海・竹芝）に寄港。",
+    "tags": [
+      "oceania",
+      "luxury",
+      "small"
+    ],
+    "accent": "#14b8a6"
+  },
+  {
+    "id": "viking-orion",
+    "name": "Viking Orion",
+    "nameJa": "バイキング・オリオン",
+    "operator": "Viking Cruises",
+    "operatorJa": "バイキング・クルーズ",
+    "imo": "9798698",
+    "built": 2018,
+    "gt": 47842,
+    "length": 228.3,
+    "beam": 28.8,
+    "passengers": 930,
+    "flag": "ノルウェー",
+    "class": "Viking Star",
+    "homeport": "アジア・地中海",
+    "notes": "バイキング海洋船シリーズ。日本周遊で竹芝に寄港。",
+    "tags": [
+      "viking",
+      "luxury",
+      "small"
+    ],
+    "accent": "#64748b"
+  },
+  {
+    "id": "msc-splendida",
+    "name": "MSC Splendida",
+    "nameJa": "MSC スプレンディダ",
+    "operator": "MSC Cruises",
+    "operatorJa": "MSCクルーズ",
+    "imo": "9387085",
+    "built": 2009,
+    "gt": 137936,
+    "length": 333.3,
+    "beam": 37.9,
+    "passengers": 3274,
+    "flag": "パナマ",
+    "class": "Fantasia",
+    "homeport": "横浜 / 上海",
+    "notes": "ファンタジア級大型船。アジア発着で東京国際CTに寄港。",
+    "tags": [
+      "msc",
+      "mega"
+    ],
     "accent": "#eab308"
   }
 ]

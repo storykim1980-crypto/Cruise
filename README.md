@@ -1,38 +1,43 @@
 # 東京クルーズログ / Tokyo Cruise Log
 
-ShipSpotting.com に着想を得た、東京寄港クルーズ客船のフォトアーカイブ。
-**日本語版（メイン）** と **英語版（/en/）** の2バージョン構成です。
+東京に寄港するクルーズ客船のフォトアーカイブ。
+**日本語版（メイン `/`）** と **英語版（`/en/`）** の2バージョン構成。
+
+## 機能
+
+- **クルーズ客船ディレクトリ** — 24隻の登録簿。運航会社フィルタ・並び替え（船名/建造年/総トン数/定員）・「写真ありのみ」絞り込み。各カードに 建造年·船齢 / 定員 / GT / 全長×幅 + 船舶ページ・写真・寄港歴・AIS追跡リンク
+- **今日の一枚 (Photo of the Day)** — ホームのヒーロー背景が毎日1枚ローテーション。右下に情報カード（船名・撮影地・撮影者）
+- **船舶ページ全面ヒーロー** — カバー写真フルブリード + IMO ピル + スペックチップ（GT/全長/建造/定員）オーバーレイ
+- **撮影者ページ** — コントリビューター一覧（統計・サムネ3枚・機材）と個別プロフィール（全写真グリッド）
+- **写真ファーストの情報設計** — 写真ごとの IMO・撮影地・カテゴリ・撮影者メタデータ / 「この船の他の写真」横断リンク / 多軸検索
 
 ## 言語バージョン / Language versions
 
-| バージョン | URL | 既定言語 |
-|-----------|-----|---------|
-| 日本語（メイン） | `/index.html` ほか | 日本語（常に固定） |
-| English | `/en/index.html` ほか | English (always) |
+| バージョン | URL | 言語 |
+|-----------|-----|------|
+| 日本語（メイン） | `/` | URL固定・常に日本語 |
+| English | `/en/` | URL固定・常に英語 |
 
-- 言語は **URL で決定**されます（localStorage 不使用）。ルートは常に日本語、`/en/` は常に英語。
-- ヘッダーの「日本語 / English」スイッチは、**同じページの別言語版へリンク**します（クエリ文字列 `?id=` なども引き継ぎ）。
-- 両バージョンは `css/` `js/` `data/` `img/` を共有。`en/` の HTML は `../` 経由で参照します。
-- 各ページに `hreflang` alternate タグ付き（ja ↔ en）。
-
-## Features
-
-- ShipSpotting 流のフォトアーカイブ: グリッド、写真詳細、IMO リンク、「この船の他の写真」
-- 船名 / IMO / 撮影地 / カテゴリ / ターミナル検索
-- ダーク基調のプレミアム UI（ガラスパネル、グラデーション、モーション）
-- データは JSON（`data/*.json`）駆動
+ヘッダーの「日本語 / English」は同一ページの別言語版へリンク（`?id=` 等クエリ引き継ぎ）。`css/ js/ data/ img/` は共有。
 
 ## Pages
 
-| File | 日本語版 | English (`en/`) |
-|------|---------|-----------------|
-| `index.html` | ホーム | Home |
-| `photos.html` | ギャラリー + フィルタ | Gallery + filters |
-| `photo.html?id=` | 写真詳細 | Photo detail |
-| `ships.html` / `ship.html?id=` | 船舶データベース | Ship database |
-| `schedule.html` | 入港スケジュール | Port calls |
-| `terminals.html` | ターミナル | Terminals |
-| `about.html` | About | About |
+| File | 内容 |
+|------|------|
+| `index.html` | ホーム — 今日の一枚 / 人気 / 最新 / カテゴリ / 撮影者 |
+| `photos.html` | ギャラリー + フィルタ |
+| `photo.html?id=` | 写真詳細（IMO・撮影者リンク付き） |
+| `ships.html` | クルーズ客船ディレクトリ |
+| `ship.html?id=` | 船舶ヒーロー + 写真 + 寄港歴 |
+| `photographers.html` / `photographer.html?name=` | 撮影者一覧 / プロフィール |
+| `schedule.html` | 入港スケジュール（32件） |
+| `terminals.html` | 東京のターミナル |
+| `about.html` | 概要・データ追加方法 |
+
+## データ規模（デモ用サンプル）
+
+- 船舶 24 / 写真 20 / 寄港記録 32 / 撮影者 3
+- ⚠️ スケジュール・統計はデモ用サンプル。IMO・船暦の正式確認は AIS / 公式情報を参照
 
 ## Run locally
 
@@ -43,8 +48,9 @@ python3 -m http.server 8080
 # English: http://localhost:8080/en/
 ```
 
-## 写真の追加 / Adding photos
+## 写真の追加
 
-1. 画像を `img/` に置く / Drop an image into `img/`
-2. `data/photos.json` にオブジェクトを追加（`shipId`・`imo`・`location`/`locationJa`・`description`/`descriptionJa` を記入）
-3. 両言語版に自動反映されます — no per-language duplication needed.
+1. 画像を `img/` に置く
+2. `data/photos.json` にレコード追加（`shipId`・`imo`・`locationJa`・`descriptionJa` 等を記入）
+3. 新船は `data/ships.json`、寄港は `data/arrivals.json`、撮影者は `data/photographers.json`
+4. 両言語版・ディレクトリ・撮影者ページに自動反映

@@ -1,5 +1,6 @@
-pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals }) => {
+pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals, photographers }) => {
   const t = I18N.t;
+  const ja = I18N.getLang() === "ja";
   const popular = DS.sortPhotos(photos, "popular").slice(0, 8);
   const latest = DS.sortPhotos(photos, "newest").slice(0, 8);
   const upcoming = [...arrivals]
@@ -7,19 +8,23 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals })
     .sort((a, b) => a.date.localeCompare(b.date))
     .slice(0, 5);
 
-  const heroTitle =
-    I18N.getLang() === "ja"
-      ? `<span class="grad">${DS.esc(site.taglineJa || site.tagline)}</span>`
-      : `<span class="grad">${DS.esc(site.tagline)}</span>`;
+  // 今日の写真 / Photo of the Day — deterministic daily rotation
+  const potdPool = DS.sortPhotos(photos, "newest");
+  const dayIdx = Math.floor(Date.now() / 86400000);
+  const potd = potdPool[dayIdx % potdPool.length];
+  const potdLoc = ja ? potd.locationJa || potd.location : potd.location || potd.locationJa;
 
-  const heroDesc = I18N.getLang() === "ja" ? (site.descriptionJa || site.description) : (site.description || site.descriptionJa);
+  const heroTitle = ja
+    ? `<span class="grad">${DS.esc(site.taglineJa || site.tagline)}</span>`
+    : `<span class="grad">${DS.esc(site.tagline)}</span>`;
+  const heroDesc = ja ? site.descriptionJa || site.description : site.description || site.descriptionJa;
 
   const catCards = categories
     .map((c) => {
       const sample = photos.find((p) => p.category === c.id);
       const n = photos.filter((p) => p.category === c.id).length;
       const countTxt = I18N.tf("photoCount", n);
-      const sub = I18N.getLang() === "ja" ? countTxt : `${c.nameJa} · ${countTxt}`;
+      const sub = ja ? countTxt : `${c.nameJa} · ${countTxt}`;
       return `
         <a class="cat-card" href="photos.html?category=${DS.esc(c.id)}">
           <div class="thumb">${sample ? `<img src="${DS.esc(DS.asset(sample.file))}" alt="" loading="lazy">` : ""}</div>
@@ -31,24 +36,46 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals })
     })
     .join("");
 
+  const contribRows = (photographers || [])
+    .map((ph) => {
+      const n = photos.filter((p) => p.photographer === ph.name).length;
+      return `
+        <a class="contrib-row" href="photographer.html?name=${encodeURIComponent(ph.name)}">
+          <span class="avatar" style="--av:${DS.esc(ph.color)}">${DS.esc(ph.initial)}</span>
+          <span class="contrib-info">
+            <strong>${DS.esc(ph.name)}</strong>
+            <span>${n} ${t("photos")} · ${DS.esc(ja ? ph.based : ph.basedEn)}</span>
+          </span>
+        </a>`;
+    })
+    .join("");
+
   root.innerHTML = `
     <section class="home-hero">
-      <div class="hero-bg" style="background-image:url('${DS.asset("img/photo-qe-salute.jpg")}')"></div>
+      <div class="hero-bg" style="background-image:url('${DS.asset(potd.file)}')"></div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <div class="hero-eyebrow"><span class="dot"></span> ${t("heroEyebrow")}</div>
-        <h1>${heroTitle}</h1>
-        <p class="sub">${DS.esc(heroDesc)}</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="photos.html">${t("nav.photos")}</a>
-          <a class="btn btn-ghost" href="schedule.html">${t("nav.schedule")}</a>
+        <div class="hero-main">
+          <div class="hero-eyebrow"><span class="dot"></span> ${t("heroEyebrow")}</div>
+          <h1>${heroTitle}</h1>
+          <p class="sub">${DS.esc(heroDesc)}</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="photos.html">${t("nav.photos")}</a>
+            <a class="btn btn-ghost" href="schedule.html">${t("nav.schedule")}</a>
+          </div>
+          <div class="home-hero-stats">
+            <div class="stat"><strong>${site.stats.photos}</strong><span>${t("heroStatsPhotos")}</span></div>
+            <div class="stat"><strong>${site.stats.ships}</strong><span>${t("heroStatsShips")}</span></div>
+            <div class="stat"><strong>${site.stats.portCalls}</strong><span>${t("heroStatsCalls")}</span></div>
+            <div class="stat"><strong>${site.stats.photographers}</strong><span>${t("heroStatsPhotographers")}</span></div>
+          </div>
         </div>
-        <div class="home-hero-stats">
-          <div class="stat"><strong>${site.stats.photos}</strong><span>${t("heroStatsPhotos")}</span></div>
-          <div class="stat"><strong>${site.stats.ships}</strong><span>${t("heroStatsShips")}</span></div>
-          <div class="stat"><strong>${site.stats.portCalls}</strong><span>${t("heroStatsCalls")}</span></div>
-          <div class="stat"><strong>${site.stats.photographers}</strong><span>${t("heroStatsPhotographers")}</span></div>
-        </div>
+        <a class="potd-card" href="photo.html?id=${DS.esc(potd.id)}">
+          <div class="potd-label"><span class="dot"></span>${t("potd")} · ${I18N.formatDate(potd.dateTaken)}</div>
+          <div class="potd-title">${DS.esc(potd.title)}</div>
+          <div class="potd-meta">${DS.esc(potdLoc)} · ${DS.esc(potd.photographer)}</div>
+          <div class="potd-link">${t("viewPhoto")} →</div>
+        </a>
       </div>
     </section>
 
@@ -116,22 +143,10 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals })
           </div>
 
           <div class="side-box">
-            <h3>${t("inspiredBy")}</h3>
+            <h3>${t("contributors")}</h3>
             <div class="body">
-              <a class="ref-item" href="${DS.esc(site.inspiredBy.url)}" target="_blank" rel="noopener">
-                <strong>${DS.esc(site.inspiredBy.name)}</strong>
-                <span>${DS.esc(I18N.getLang() === "ja" ? site.inspiredBy.noteJa || site.inspiredBy.note : site.inspiredBy.note)}</span>
-              </a>
-              ${site.references
-                .slice(1, 4)
-                .map(
-                  (r) => `
-                <a class="ref-item" href="${DS.esc(r.url)}" target="_blank" rel="noopener">
-                  <strong>${DS.esc(r.name)}</strong>
-                  <span>${DS.esc(I18N.getLang() === "ja" ? r.whyJa || r.why : r.why)}</span>
-                </a>`
-                )
-                .join("")}
+              ${contribRows}
+              <p style="margin-top:0.6rem"><a href="photographers.html">${t("browseAll")} →</a></p>
             </div>
           </div>
 
@@ -155,8 +170,7 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals })
     location.href = q ? `photos.html?q=${encodeURIComponent(q)}` : "photos.html";
   });
 
-  document.title =
-    I18N.getLang() === "ja"
-      ? "東京クルーズログ | Tokyo Cruise Log — 船舶フォトアーカイブ"
-      : "Tokyo Cruise Log | Tokyo Bay Cruise Ship Photo Archive";
+  document.title = ja
+    ? "東京クルーズログ | Tokyo Cruise Log — 船舶フォトアーカイブ"
+    : "Tokyo Cruise Log | Tokyo Bay Cruise Ship Photo Archive";
 });

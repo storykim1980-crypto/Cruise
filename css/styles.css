@@ -357,7 +357,6 @@ main { min-height: 62vh; padding-bottom: 4rem; }
   position: relative;
   z-index: 1;
   padding: 3.5rem 0 2.5rem;
-  width: 100%;
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -1224,7 +1223,7 @@ table.data tbody tr:hover { background: rgba(61, 169, 252, 0.05); }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.55fr 1fr 1fr 1fr;
+  grid-template-columns: 1.7fr 1fr 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -1360,4 +1359,240 @@ table.data tbody tr:hover { background: rgba(61, 169, 252, 0.05); }
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+/* ============================================================
+   Cruise ship directory (CruiseMapper-style)
+   ============================================================ */
+.dir-count {
+  margin-top: 0.9rem;
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--link);
+  background: rgba(61, 169, 252, 0.1);
+  border: 1px solid rgba(61, 169, 252, 0.25);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+.dir-list { display: grid; gap: 0.9rem; margin: 1.1rem 0 3rem; }
+.dir-card {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 0;
+  background: rgba(9, 15, 28, 0.66);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.dir-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(61, 169, 252, 0.4);
+  box-shadow: 0 14px 34px rgba(2, 6, 16, 0.55);
+}
+.dir-thumb { position: relative; display: block; min-height: 170px; background: #0a1120; }
+.dir-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s var(--ease); }
+.dir-card:hover .dir-thumb img { transform: scale(1.05); }
+.dir-thumb .badge { position: absolute; left: 0.6rem; bottom: 0.6rem; }
+.dir-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
+  color: var(--dim); font-size: 0.78rem; letter-spacing: 0.08em;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(61, 169, 252, 0.12), transparent 60%),
+    linear-gradient(160deg, #0b1322, #070c16);
+}
+.dir-placeholder svg { width: 46px; height: 46px; fill: rgba(120, 150, 200, 0.4); }
+.dir-body { padding: 1rem 1.15rem 1.05rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.dir-title-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.55rem; }
+.dir-title-row h3 { margin: 0; font-size: 1.08rem; letter-spacing: 0.02em; }
+.dir-title-row h3 a { color: var(--text); }
+.dir-title-row h3 a:hover { color: var(--link); }
+.dir-name-alt { color: var(--muted); font-size: 0.82rem; }
+.dir-line { display: flex; flex-wrap: wrap; gap: 0.35rem; font-size: 0.8rem; color: var(--dim); font-family: var(--mono); }
+.dir-line a { color: var(--link); }
+.dir-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.4rem 1rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0;
+}
+.dir-specs .k { display: block; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim); font-weight: 800; }
+.dir-specs .v { font-size: 0.86rem; color: var(--text); font-variant-numeric: tabular-nums; }
+.dir-actions { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: auto; }
+
+/* ============================================================
+   Ship hero (FleetMon-style)
+   ============================================================ */
+.ship-hero {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center 35%;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.ship-hero.no-cover {
+  background:
+    radial-gradient(120% 100% at 20% 0%, rgba(61, 169, 252, 0.16), transparent 55%),
+    linear-gradient(160deg, #0b1322, #060a13);
+}
+.ship-hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(5, 8, 15, 0.93) 0%, rgba(5, 8, 15, 0.7) 45%, rgba(5, 8, 15, 0.4) 75%, rgba(5, 8, 15, 0.7) 100%),
+    linear-gradient(0deg, rgba(5, 8, 15, 0.96) 0%, transparent 55%);
+}
+.ship-hero-inner { position: relative; z-index: 1; padding: 2.8rem 0 1.7rem; }
+.ship-hero-kicker {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem;
+  font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 0.7rem;
+}
+.imo-pill {
+  font-family: var(--mono);
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em;
+  color: #bfe3ff;
+  background: rgba(61, 169, 252, 0.16);
+  border: 1px solid rgba(61, 169, 252, 0.4);
+  padding: 0.28rem 0.7rem; border-radius: 999px;
+}
+.ship-hero h1 { margin: 0 0 0.3rem; font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: 0.01em; text-shadow: 0 4px 24px rgba(0,0,0,0.6); }
+.ship-hero .aka { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
+.spec-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.15rem; }
+.spec-chips span {
+  display: inline-flex; align-items: baseline; gap: 0.45rem;
+  background: rgba(6, 12, 24, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.88rem; font-variant-numeric: tabular-nums;
+  backdrop-filter: blur(8px);
+}
+.spec-chips b {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--dim); font-weight: 800;
+}
+.ship-hero-actions { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.ship-body-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 1.6rem;
+  align-items: start;
+  margin-top: 1.6rem;
+}
+
+/* ============================================================
+   Photo of the Day card (Boatnerd-style)
+   ============================================================ */
+.home-hero .hero-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.hero-main { max-width: 720px; }
+.potd-card {
+  flex-shrink: 0;
+  width: min(330px, 40vw);
+  display: block;
+  background: rgba(6, 12, 24, 0.78);
+  border: 1px solid rgba(61, 169, 252, 0.3);
+  border-radius: 16px;
+  padding: 0.95rem 1.05rem 1rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 44px rgba(2, 6, 16, 0.6);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+  margin-bottom: 0.4rem;
+}
+.potd-card:hover { transform: translateY(-4px); border-color: rgba(61, 169, 252, 0.6); }
+.potd-label {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #8fd3ff; margin-bottom: 0.5rem;
+}
+.potd-label .dot { width: 7px; height: 7px; border-radius: 50%; background: #38bdf8; box-shadow: 0 0 10px #38bdf8; animation: pulseDot 2.2s infinite; }
+.potd-title { font-size: 1.02rem; font-weight: 800; color: #fff; letter-spacing: 0.03em; line-height: 1.3; }
+.potd-meta { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; line-height: 1.5; }
+.potd-link { font-size: 0.8rem; color: var(--link); font-weight: 700; margin-top: 0.65rem; }
+
+/* ============================================================
+   Photographers / contributors
+   ============================================================ */
+.avatar {
+  --av: #38bdf8;
+  width: 34px; height: 34px;
+  border-radius: 999px;
+  display: inline-grid; place-items: center;
+  font-weight: 800; font-size: 0.85rem; color: #04101c;
+  background: linear-gradient(140deg, var(--av), color-mix(in srgb, var(--av) 55%, #ffffff 10%));
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08), 0 6px 18px rgba(2, 6, 16, 0.5);
+  flex-shrink: 0;
+}
+.avatar.lg { width: 54px; height: 54px; font-size: 1.25rem; }
+.avatar.xl { width: 86px; height: 86px; font-size: 2rem; }
+.contrib-row {
+  display: flex; align-items: center; gap: 0.7rem;
+  padding: 0.5rem 0.35rem; border-radius: 10px;
+  transition: background 0.2s var(--ease);
+}
+.contrib-row:hover { background: rgba(61, 169, 252, 0.08); }
+.contrib-info { display: flex; flex-direction: column; min-width: 0; }
+.contrib-info strong { font-size: 0.86rem; color: var(--text); }
+.contrib-info > span { font-size: 0.74rem; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ph-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.1rem; margin: 1.2rem 0 3rem; }
+.ph-card {
+  background: rgba(9, 15, 28, 0.66);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.15rem;
+  backdrop-filter: blur(10px);
+  display: flex; flex-direction: column; gap: 0.75rem;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.ph-card:hover { transform: translateY(-3px); border-color: rgba(61, 169, 252, 0.35); }
+.ph-head { display: flex; align-items: center; gap: 0.85rem; }
+.ph-head h2 { margin: 0; font-size: 1.05rem; }
+.ph-sub { font-size: 0.76rem; color: var(--dim); font-family: var(--mono); letter-spacing: 0.03em; }
+.ph-bio { font-size: 0.84rem; color: var(--muted); line-height: 1.65; margin: 0; }
+.ph-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.65rem 0; }
+.ph-stats dt { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); font-weight: 800; }
+.ph-stats dd { margin: 0.15rem 0 0; font-size: 0.95rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text); }
+.ph-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.ph-thumbs a { border-radius: 10px; overflow: hidden; aspect-ratio: 4/3; display: block; background: #0a1120; }
+.ph-thumbs img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s var(--ease); }
+.ph-thumbs a:hover img { transform: scale(1.06); }
+.ph-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.ph-hero {
+  display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap;
+  background: rgba(9, 15, 28, 0.66);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin: 1.2rem 0 0.5rem;
+  backdrop-filter: blur(10px);
+}
+.ph-hero-main { flex: 1 1 300px; min-width: 0; }
+.ph-hero-main h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
+.ph-hero .ph-stats.wide { border: none; padding: 0; grid-template-columns: repeat(2, minmax(90px, auto)); gap: 0.7rem 1.4rem; }
+
+/* Responsive */
+@media (max-width: 1020px) {
+  .ship-body-grid { grid-template-columns: minmax(0, 1fr); }
+  .ship-body-grid aside { position: static !important; }
+}
+@media (max-width: 860px) {
+  .home-hero .hero-content { flex-direction: column; align-items: stretch; }
+  .potd-card { width: 100%; margin-bottom: 0; }
+  .hero-main { max-width: none; }
+  .dir-card { grid-template-columns: minmax(0, 1fr); }
+  .dir-thumb { min-height: 190px; aspect-ratio: 16/9; }
+  .ship-hero { min-height: 340px; }
 }

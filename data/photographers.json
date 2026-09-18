@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tokyobayspotter",
+    "name": "TokyoBaySpotter",
+    "initial": "T",
+    "color": "#38bdf8",
+    "joined": "2019",
+    "based": "東京都江東区・有明",
+    "basedEn": "Ariake, Koto-ku, Tokyo",
+    "bioJa": "東京国際クルーズターミナルの駅デッキ定点が主戦場。入港の朝と放水歓迎を狙う。",
+    "bioEn": "Based at the Yurikamome deck overlooking Tokyo International CT. Specialises in dawn arrivals and fireboat salutes.",
+    "gear": "Sony α7R V / FX3 · 70-200mm GM II"
+  },
+  {
+    "id": "minatolens",
+    "name": "MinatoLens",
+    "initial": "M",
+    "color": "#a78bfa",
+    "joined": "2021",
+    "based": "東京都港区",
+    "basedEn": "Minato-ku, Tokyo",
+    "bioJa": "レインボーブリッジ周辺と竹芝・日の出の小型船を主に撮影。夜景・薄暮が多い。",
+    "bioEn": "Shoots around Rainbow Bridge and the Takeshiba/Hinode piers, mostly small ships at twilight.",
+    "gear": "Nikon Z8 · 24-120mm / 100-400mm"
+  },
+  {
+    "id": "ariake-deck",
+    "name": "AriakeDeck",
+    "initial": "A",
+    "color": "#34d399",
+    "joined": "2023",
+    "based": "東京都江東区",
+    "basedEn": "Koto-ku, Tokyo",
+    "bioJa": "クレーン・ブリッジを絡めた構図と、晴海ふ頭公園からのサイドラインが得意。",
+    "bioEn": "Known for crane-and-bridge compositions and the Harumi side-line from the waterfront park.",
+    "gear": "Canon R6 II · 24-105mm / 100-400mm"
+  }
+]
