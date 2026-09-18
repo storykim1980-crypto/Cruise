@@ -1,0 +1,64 @@
+pageApp("about", (root, { site }) => {
+  const t = I18N.t;
+  const ja = I18N.getLang() === "ja";
+
+  const body = ja
+    ? `
+      <h2>アーカイブの構成</h2>
+      <p>本サイトは東京に寄港するクルーズ客船の写真を記録するためのアーカイブです。</p>
+      <p><strong>1. 写真が主役</strong> — 1枚ごとに固有 ID・船名・IMO・撮影日・場所・カテゴリ・撮影者を持つ。</p>
+      <p><strong>2. この船の他の写真</strong> — 同一 IMO / shipId でその船の他写真へ横断リンク。</p>
+      <p><strong>3. カテゴリ分類</strong> — メガ / 当代 / ラグジュアリー / 国内 などクルーズ特化カテゴリ。</p>
+      <p><strong>4. 検索</strong> — 船名だけでなく IMO・撮影地・タグでもヒット。</p>
+      <p><strong>5. 船舶ページ</strong> — スペック＋写真一覧＋寄港ログを1隻に集約。</p>
+      <p><strong>6. 日英切替</strong> — ヘッダーの 日本語 / English で別バージョンへ移動（URL で言語固定）。</p>
+
+      <h2>リンク</h2>
+      <p><a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com</a> — ${t("refShipspotting")}</p>
+      <p><a href="https://www.cruisemapper.com/" target="_blank" rel="noopener">CruiseMapper</a> — ${t("refCruisemapper")}</p>
+      <p><a href="https://www.marinetraffic.com/" target="_blank" rel="noopener">MarineTraffic</a> — ${t("refMarinetraffic")}</p>
+
+      <h2>お問い合わせ</h2>
+      <p>${DS.esc(site.author)} · ${DS.esc(site.location)} · ${DS.esc(site.email)}</p>
+    `
+    : `
+      <h2>How the archive is organised</h2>
+      <p>This site is a photo archive recording cruise ships that call at Tokyo.</p>
+      <p><strong>1. Photos first</strong> — every frame has an ID, ship name, IMO, date, location, category and photographer.</p>
+      <p><strong>2. More from this ship</strong> — the same IMO / shipId links every photo of that vessel.</p>
+      <p><strong>3. Categories</strong> — mega, contemporary, luxury and domestic cruise groupings.</p>
+      <p><strong>4. Search</strong> — hit on name, IMO, place or tags.</p>
+      <p><strong>5. Ship pages</strong> — specs, photo set and Tokyo call log in one place.</p>
+      <p><strong>6. JA / EN versions</strong> — the header switch moves between two URL-pinned language versions.</p>
+
+      <h2>Links</h2>
+      <p><a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com</a> — ${t("refShipspotting")}</p>
+      <p><a href="https://www.cruisemapper.com/" target="_blank" rel="noopener">CruiseMapper</a> — ${t("refCruisemapper")}</p>
+      <p><a href="https://www.marinetraffic.com/" target="_blank" rel="noopener">MarineTraffic</a> — ${t("refMarinetraffic")}</p>
+
+      <h2>Contact</h2>
+      <p>${DS.esc(site.author)} · ${DS.esc(site.location)} · ${DS.esc(site.email)}</p>
+    `;
+
+  root.innerHTML = `
+    <div class="page-title-bar">
+      <div class="container">
+        ${UI.crumb([
+          { href: "index.html", label: t("nav.home") },
+          { href: "about.html", label: t("nav.about") },
+        ])}
+        <h1>${t("aboutTitle")}</h1>
+        <p>${DS.esc(ja ? site.descriptionJa || site.description : site.description || site.descriptionJa)}</p>
+      </div>
+    </div>
+    <div class="container prose">
+      ${body}
+      <p style="margin-top:2rem">
+        <a class="btn btn-primary" href="photos.html">${t("nav.photos")}</a>
+        <a class="btn btn-ghost" href="index.html" style="margin-left:0.5rem">${t("nav.home")}</a>
+      </p>
+    </div>
+  `;
+
+  document.title = `${t("aboutTitle")} | ${t("brand")}`;
+});
