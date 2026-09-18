@@ -151,6 +151,7 @@ pageApp("photos", (root, data) => {
           <div class="side-box">
             <h3>${t("links")}</h3>
             <div class="body" style="font-size:0.85rem">
+              <p><a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com ↗</a></p>
               <p><a href="https://www.marinetraffic.com/en/ais/details/ships/imo:${DS.esc(p.imo)}" target="_blank" rel="noopener">MarineTraffic ↗</a></p>
               <p><a href="https://www.vesselfinder.com/?imo=${DS.esc(p.imo)}" target="_blank" rel="noopener">VesselFinder ↗</a></p>
               <p><a href="schedule.html">${t("nav.schedule")}</a></p>

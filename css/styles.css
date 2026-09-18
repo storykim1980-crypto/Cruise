@@ -4,20 +4,20 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --bg-0: #05080f;
-  --bg-1: #0a101c;
-  --bg-2: #0f1729;
-  --bg-3: #152036;
-  --panel: rgba(18, 28, 48, 0.72);
-  --panel-solid: #121c30;
-  --panel-2: rgba(22, 34, 56, 0.9);
-  --border: rgba(120, 170, 220, 0.1);
-  --border-md: rgba(120, 170, 220, 0.18);
+  --bg-0: #0b1424;
+  --bg-1: #111c30;
+  --bg-2: #17253e;
+  --bg-3: #1e2f4d;
+  --panel: rgba(26, 39, 64, 0.66);
+  --panel-solid: #1a2942;
+  --panel-2: rgba(32, 47, 75, 0.9);
+  --border: rgba(140, 185, 235, 0.14);
+  --border-md: rgba(140, 185, 235, 0.22);
   --border-hi: rgba(96, 180, 255, 0.42);
   --text: #eef4fc;
   --text-2: #b7c5d8;
-  --muted: #8496b0;
-  --dim: #5d6f88;
+  --muted: #97a8c2;
+  --dim: #71839d;
   --link: #6ec0ff;
   --link-h: #a8d9ff;
   --accent: #3da9fc;
@@ -71,7 +71,7 @@ body::before {
     radial-gradient(ellipse 70% 45% at 95% 5%, rgba(129, 140, 248, 0.14), transparent 50%),
     radial-gradient(ellipse 60% 40% at 70% 100%, rgba(34, 211, 238, 0.08), transparent 50%),
     radial-gradient(ellipse 50% 30% at 0% 80%, rgba(244, 114, 182, 0.06), transparent 45%),
-    linear-gradient(180deg, #05080f 0%, #0a101c 40%, #070b14 100%);
+    linear-gradient(180deg, #0b1424 0%, #12203a 40%, #0d1728 100%);
 }
 
 body::after {
@@ -268,7 +268,7 @@ code {
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  background: rgba(6, 12, 24, 0.7);
+  background: rgba(16, 27, 48, 0.66);
   border: 1px solid var(--border-md);
   border-radius: 999px;
   padding: 3px;
@@ -304,7 +304,7 @@ code {
 .menu-toggle {
   display: none;
   margin-left: 0.25rem;
-  background: rgba(6, 12, 24, 0.7);
+  background: rgba(16, 27, 48, 0.66);
   border: 1px solid var(--border-md);
   border-radius: 10px;
   width: 42px;
@@ -350,8 +350,8 @@ main { min-height: 62vh; padding-bottom: 4rem; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(5, 8, 15, 0.92) 0%, rgba(5, 8, 15, 0.72) 42%, rgba(5, 8, 15, 0.45) 70%, rgba(5, 8, 15, 0.75) 100%),
-    linear-gradient(0deg, rgba(5, 8, 15, 0.95) 0%, transparent 45%);
+    linear-gradient(105deg, rgba(7, 14, 28, 0.74) 0%, rgba(7, 14, 28, 0.4) 42%, rgba(7, 14, 28, 0.08) 70%, rgba(7, 14, 28, 0.28) 100%),
+    linear-gradient(0deg, rgba(7, 14, 28, 0.66) 0%, transparent 40%);
 }
 .home-hero .hero-content {
   position: relative;
@@ -1382,7 +1382,7 @@ table.data tbody tr:hover { background: rgba(61, 169, 252, 0.05); }
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
   gap: 0;
-  background: rgba(9, 15, 28, 0.66);
+  background: rgba(20, 32, 54, 0.62);
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
@@ -1469,7 +1469,7 @@ table.data tbody tr:hover { background: rgba(61, 169, 252, 0.05); }
 .spec-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.15rem; }
 .spec-chips span {
   display: inline-flex; align-items: baseline; gap: 0.45rem;
-  background: rgba(6, 12, 24, 0.72);
+  background: rgba(16, 27, 48, 0.66);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.45rem 0.8rem;
@@ -1503,7 +1503,7 @@ table.data tbody tr:hover { background: rgba(61, 169, 252, 0.05); }
   flex-shrink: 0;
   width: min(330px, 40vw);
   display: block;
-  background: rgba(6, 12, 24, 0.78);
+  background: rgba(16, 27, 48, 0.72);
   border: 1px solid rgba(61, 169, 252, 0.3);
   border-radius: 16px;
   padding: 0.95rem 1.05rem 1rem;
@@ -1549,7 +1549,7 @@ table.data tbody tr:hover { background: rgba(61, 169, 252, 0.05); }
 .contrib-info > span { font-size: 0.74rem; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ph-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.1rem; margin: 1.2rem 0 3rem; }
 .ph-card {
-  background: rgba(9, 15, 28, 0.66);
+  background: rgba(20, 32, 54, 0.62);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.15rem;
@@ -1572,7 +1572,7 @@ table.data tbody tr:hover { background: rgba(61, 169, 252, 0.05); }
 .ph-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
 .ph-hero {
   display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap;
-  background: rgba(9, 15, 28, 0.66);
+  background: rgba(20, 32, 54, 0.62);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 1.5rem;

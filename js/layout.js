@@ -90,6 +90,13 @@ const Layout = (() => {
             ${footerTermLinks(data?.terminals)}
             <a href="schedule.html">${t("footerSchedule")}</a>
           </div>
+          <div class="footer-col">
+            <h4>${t("footerRefs")}</h4>
+            <a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com</a>
+            <a href="https://www.cruisemapper.com/" target="_blank" rel="noopener">CruiseMapper</a>
+            <a href="https://www.marinetraffic.com/" target="_blank" rel="noopener">MarineTraffic</a>
+            <a href="about.html">${t("footerAbout")}</a>
+          </div>
         </div>
         <div class="footer-bottom">
           <span>${t("footerCopy")}</span>

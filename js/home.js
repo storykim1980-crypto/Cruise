@@ -52,7 +52,7 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals, p
 
   root.innerHTML = `
     <section class="home-hero">
-      <div class="hero-bg" style="background-image:url('${DS.asset(potd.file)}')"></div>
+      <div class="hero-bg" style="background-image:url('${DS.asset("img/hero-tokyo-bay.jpg")}')"></div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <div class="hero-main">

@@ -34,6 +34,11 @@ pageApp("about", (root, { site }) => {
 }</pre>
       <p>船舶は <code>ships.json</code>、寄港は <code>arrivals.json</code>、撮影者は <code>photographers.json</code>。<code>shipId</code> と <code>imo</code> を一致させてください。</p>
 
+      <h2>リンク</h2>
+      <p><a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com</a> — ${t("refShipspotting")}</p>
+      <p><a href="https://www.cruisemapper.com/" target="_blank" rel="noopener">CruiseMapper</a> — ${t("refCruisemapper")}</p>
+      <p><a href="https://www.marinetraffic.com/" target="_blank" rel="noopener">MarineTraffic</a> — ${t("refMarinetraffic")}</p>
+
       <h2>お問い合わせ</h2>
       <p>${DS.esc(site.author)} · ${DS.esc(site.location)} · ${DS.esc(site.email)}</p>
     `
@@ -67,6 +72,11 @@ pageApp("about", (root, { site }) => {
   "tags": ["arrival"]
 }</pre>
       <p>Ships live in <code>ships.json</code>, calls in <code>arrivals.json</code>, contributors in <code>photographers.json</code>. Keep <code>shipId</code> and <code>imo</code> in sync.</p>
+
+      <h2>Links</h2>
+      <p><a href="https://www.shipspotting.com/" target="_blank" rel="noopener">ShipSpotting.com</a> — ${t("refShipspotting")}</p>
+      <p><a href="https://www.cruisemapper.com/" target="_blank" rel="noopener">CruiseMapper</a> — ${t("refCruisemapper")}</p>
+      <p><a href="https://www.marinetraffic.com/" target="_blank" rel="noopener">MarineTraffic</a> — ${t("refMarinetraffic")}</p>
 
       <h2>Contact</h2>
       <p>${DS.esc(site.author)} · ${DS.esc(site.location)} · ${DS.esc(site.email)}</p>
