@@ -119,7 +119,7 @@ pageApp("ships", (root, data) => {
             <div class="body">
               <div class="ship-mini-specs">
                 <div><span>${t("name")}</span><span>${DS.esc(s.name)}</span></div>
-                <div><span>日本語</span><span>${DS.esc(s.nameJa)}</span></div>
+                <div><span>${t("nameJaLabel")}</span><span>${DS.esc(s.nameJa)}</span></div>
                 <div><span>${t("operator")}</span><span>${DS.esc(DS.operatorName(s))}</span></div>
                 <div><span>${t("built")}</span><span>${s.built}</span></div>
                 <div><span>${t("grossTonnage")}</span><span>${DS.gtLabel(s.gt)}</span></div>
