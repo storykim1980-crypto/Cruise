@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cruise-mega",
+    "name": "Cruise Ships — Mega / Contemporary",
+    "nameJa": "クルーズ客船（メガ・当代）",
+    "description": "大型・超大型の当代クルーズ客船（おおよそ10万GT超のクラスを中心）"
+  },
+  {
+    "id": "cruise-contemporary",
+    "name": "Cruise Ships — Contemporary",
+    "nameJa": "クルーズ客船（当代）",
+    "description": "当代デザインの中〜大型クルーズ客船"
+  },
+  {
+    "id": "cruise-luxury",
+    "name": "Cruise Ships — Luxury / Classic",
+    "nameJa": "クルーズ客船（ラグジュアリー／クラシック）",
+    "description": "プレミアム・ラグジュアリー船、クラシックライン"
+  },
+  {
+    "id": "cruise-domestic",
+    "name": "Cruise Ships — Japanese Domestic",
+    "nameJa": "クルーズ客船（国内・日本籍）",
+    "description": "日本発着・日本籍を中心とした客船"
+  }
+]
