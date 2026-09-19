@@ -2064,3 +2064,26 @@ img, svg, iframe, video { max-width: 100%; }
   .logo-mark { width: 34px; height: 34px; }
   .hero-actions .btn { padding: 0.55rem 0.9rem; font-size: 0.82rem; }
 }
+
+
+/* ============================================================
+   MOBILE FIX v5 — hamburger always visible + true wave divider
+   ============================================================ */
+/* inline strong ignores ellipsis -> block makes the brand shrinkable */
+.logo-text strong { display: block; }
+.logo { flex: 0 1 auto; }
+.lang-switch { flex: 0 0 auto; }
+.menu-toggle { flex: 0 0 auto; margin-left: auto; }
+@media (max-width: 560px) {
+  .logo-mark { width: 36px; height: 36px; }
+  .logo-text strong { font-size: 0.95rem; }
+  .lang-switch a { padding: 0.28rem 0.52rem; font-size: 0.7rem; }
+}
+@media (max-width: 340px) {
+  .logo-text { display: none; }
+}
+/* gentle sea wave instead of the diagonal dome */
+.home-hero::after {
+  left: 0; right: 0; height: 60px; border-radius: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C240,22 480,2 720,18 C960,34 1200,46 1440,12 L1440,60 Z' fill='%23eef4f9'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+}
