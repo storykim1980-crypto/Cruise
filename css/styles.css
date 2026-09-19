@@ -2087,3 +2087,146 @@ img, svg, iframe, video { max-width: 100%; }
   left: 0; right: 0; height: 60px; border-radius: 0;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C240,22 480,2 720,18 C960,34 1200,46 1440,12 L1440,60 Z' fill='%23eef4f9'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
 }
+
+
+/* ============================================================
+   PREMIUM MOBILE v6 — refined hero, solid header, no blowout
+   ============================================================ */
+/* grid blow-out guard: tracks must never inherit image intrinsic width */
+.photo-detail-layout, .home-split, .ship-header, .term-grid-inner { grid-template-columns: minmax(0, 1fr); }
+.photo-main, .side-stack, .photo-info, .full-img, .photo-toolbar { min-width: 0; }
+.photo-main .full-img img { width: 100%; }
+@media (min-width: 961px) {
+  .photo-detail-layout { grid-template-columns: minmax(0, 1fr) 310px; }
+}
+
+/* header: balanced three-zone row, brand never pushes the toggle */
+.header-inner { justify-content: space-between; }
+.lg-short { display: none; }
+@media (max-width: 600px) {
+  .lg-full { display: none; }
+  .lg-short { display: inline; }
+  .lang-switch a { padding: 0.3rem 0.62rem; font-size: 0.72rem; font-weight: 700; }
+}
+
+/* cinematic hero: deep-sea scrim + glass elements */
+.home-hero .hero-overlay {
+  background: linear-gradient(180deg, rgba(7, 22, 40, 0.62) 0%, rgba(7, 22, 40, 0.28) 42%, rgba(8, 26, 48, 0.72) 100%);
+}
+.hero-eyebrow {
+  background: rgba(255, 255, 255, 0.13); border: 1px solid rgba(255, 255, 255, 0.34);
+  color: #fff; backdrop-filter: blur(8px); box-shadow: none;
+}
+.home-hero h1 { font-weight: 900; letter-spacing: -0.02em; }
+.hero-actions .btn-ghost {
+  background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #fff; backdrop-filter: blur(8px);
+}
+.hero-actions .btn-ghost:hover { background: rgba(255, 255, 255, 0.26); }
+
+/* stats: one sleek glass strip instead of four bulky cards */
+.home-hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; width: 100%;
+  background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px); border-radius: 14px; padding: 0.7rem 0.35rem;
+  box-shadow: none;
+}
+.home-hero-stats .stat {
+  background: transparent; border: 0; box-shadow: none; border-radius: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 0.15rem 0.7rem; display: flex; flex-direction: column; gap: 0.1rem;
+}
+.home-hero-stats .stat:first-child { border-left: 0; }
+.home-hero-stats .stat strong { color: #fff; font-size: 1.3rem; font-weight: 900; }
+.home-hero-stats .stat span { color: rgba(255, 255, 255, 0.82); font-size: 0.66rem; letter-spacing: 0.08em; }
+@media (max-width: 560px) {
+  .home-hero-stats { grid-template-columns: repeat(2, 1fr); padding: 0.55rem 0.3rem; }
+  .home-hero-stats .stat { border-left: 0; padding: 0.3rem 0.7rem; }
+  .home-hero-stats .stat:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, 0.18); }
+}
+
+/* POTD: dark glass jewel on the hero */
+.potd-card {
+  background: rgba(9, 26, 46, 0.55); border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px); box-shadow: 0 14px 40px rgba(4, 16, 32, 0.35);
+}
+.potd-title { color: #fff; }
+.potd-meta, .potd-card .meta, .potd-card p { color: #cfe0ef; }
+.potd-link { color: #8fd0ff; }
+.potd-card:hover { border-color: rgba(255, 255, 255, 0.45); }
+
+/* breadcrumb mobile tuning */
+@media (max-width: 560px) {
+  .breadcrumb { font-size: 0.72rem; gap: 0.35rem; }
+}
+
+
+/* ============================================================
+   FOOTER v7 — compact, aligned, half-height on mobile
+   ============================================================ */
+.footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.footer-brand p { max-width: 34ch; }
+.footer-col h4 {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; letter-spacing: 0.1em;
+}
+.footer-col h4::before {
+  content: ""; width: 14px; height: 2px; border-radius: 1px;
+  background: #3f8fd4; flex: 0 0 auto;
+}
+.footer-col a {
+  display: block; padding: 0.3rem 0; font-size: 0.86rem;
+  color: #b9cfe2; transition: color 0.2s, transform 0.2s;
+}
+.footer-col a:hover { color: #fff; transform: translateX(2px); }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.8rem; flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.6rem 1.4rem; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-brand p { max-width: 46ch; }
+}
+@media (max-width: 480px) {
+  .footer-grid { gap: 1.3rem 1rem; padding-top: 2.4rem; }
+  .footer-col h4 { font-size: 0.74rem; margin-bottom: 0.7rem; }
+  .footer-col a { padding: 0.26rem 0; font-size: 0.82rem; }
+  .footer-bottom { justify-content: center; text-align: center; }
+}
+
+
+/* hero minimal: no wave divider, breathing room at bottom */
+.home-hero::after { display: none; }
+.home-hero .hero-content { padding-bottom: 4.5rem; }
+
+
+/* ============================================================
+   TABLE v8 — mobile card transformation (no clipped columns)
+   ============================================================ */
+@media (max-width: 760px) {
+  .table-wrap { overflow: visible; border: 0; background: transparent; }
+  table.data, table.data tbody { display: block; width: 100%; }
+  table.data thead { display: none; }
+  table.data tr {
+    display: block; background: #fff; border: 1px solid var(--oc-line);
+    border-radius: 12px; margin: 0 0 0.8rem; padding: 0.55rem 0.85rem;
+    box-shadow: 0 1px 3px rgba(13, 43, 69, 0.06);
+  }
+  table.data td {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; border: 0; padding: 0.34rem 0; font-size: 0.85rem;
+    text-align: right; white-space: normal;
+  }
+  table.data td::before {
+    content: attr(data-label);
+    font-size: 0.68rem; font-weight: 800; color: var(--oc-muted);
+    letter-spacing: 0.07em; text-align: left; flex: 0 0 auto;
+  }
+  table.data td:empty { display: none; }
+  table.data tbody tr:hover { background: #fff; }
+}

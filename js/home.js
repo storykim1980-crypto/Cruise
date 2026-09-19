@@ -17,7 +17,6 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals, p
   const heroTitle = ja
     ? `<span class="grad">${DS.esc(site.taglineJa || site.tagline)}</span>`
     : `<span class="grad">${DS.esc(site.tagline)}</span>`;
-  const heroDesc = ja ? site.descriptionJa || site.description : site.description || site.descriptionJa;
 
   const catCards = categories
     .map((c) => {
@@ -58,18 +57,6 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals, p
         <div class="hero-main">
           <div class="hero-eyebrow"><span class="dot"></span> ${t("heroEyebrow")}</div>
           <h1>${heroTitle}</h1>
-          <p class="sub">${DS.esc(heroDesc)}</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="photos.html">${t("nav.photos")}</a>
-            <a class="btn btn-ghost" href="schedule.html">${t("nav.schedule")}</a>
-          </div>
-          <div class="hero-chip" id="next-call" hidden></div>
-          <div class="home-hero-stats">
-            <div class="stat"><strong>${site.stats.photos}</strong><span>${t("heroStatsPhotos")}</span></div>
-            <div class="stat"><strong>${site.stats.ships}</strong><span>${t("heroStatsShips")}</span></div>
-            <div class="stat"><strong>${site.stats.portCalls}</strong><span>${t("heroStatsCalls")}</span></div>
-            <div class="stat"><strong>${site.stats.photographers}</strong><span>${t("heroStatsPhotographers")}</span></div>
-          </div>
         </div>
         <a class="potd-card" href="photo.html?id=${DS.esc(potd.id)}">
           <div class="potd-label"><span class="dot"></span>${t("potd")} · ${I18N.formatDate(potd.dateTaken)}</div>
@@ -176,30 +163,3 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals, p
     : "Tokyo Cruise Log | Tokyo Bay Cruise Ship Photo Archive";
 });
 
-/* max-upgrade: next-call countdown chip + animated counters */
-(async () => {
-  try {
-    const [arr, ships] = await Promise.all([DS.load("arrivals"), DS.load("ships")]);
-    const today = DS.todayISO();
-    const next = arr
-      .filter((a) => a.status === "scheduled" && a.date >= today)
-      .sort((a, b) => a.date.localeCompare(b.date))[0];
-    const chip = document.getElementById("next-call");
-    if (next && chip) {
-      const s = ships.find((x) => x.id === next.shipId);
-      const days = Math.max(0, Math.round((new Date(next.date + "T00:00:00") - new Date(today + "T00:00:00")) / 86400000));
-      chip.hidden = false;
-      chip.innerHTML = `<span class="dot"></span> ${DS.esc(s ? (I18N.getLang() === "ja" && s.nameJa ? s.nameJa : s.name) : next.shipId)} · ${I18N.t("nextCallChip").replace("{d}", days)}`;
-    }
-  } catch (e) { /* offline */ }
-  document.querySelectorAll(".home-hero-stats strong").forEach((el) => {
-    const end = parseInt(String(el.textContent).replace(/[^0-9]/g, ""), 10) || 0;
-    const t0 = performance.now();
-    const step = (now) => {
-      const k = Math.min(1, (now - t0) / 900);
-      el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))).toLocaleString();
-      if (k < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  });
-})();

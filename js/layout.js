@@ -51,8 +51,8 @@ const Layout = (() => {
           <a href="about.html" data-nav="about">${t("nav.about")}</a>
         </nav>
         <div class="lang-switch" role="group" aria-label="Language / 言語">
-          <a href="${I18N.altUrl("ja")}" class="${lang === "ja" ? "active" : ""}" hreflang="ja" lang="ja">日本語</a>
-          <a href="${I18N.altUrl("en")}" class="${lang === "en" ? "active" : ""}" hreflang="en" lang="en">English</a>
+          <a href="${I18N.altUrl("ja")}" class="${lang === "ja" ? "active" : ""}" hreflang="ja" lang="ja"><span class="lg-full">日本語</span><span class="lg-short">JA</span></a>
+          <a href="${I18N.altUrl("en")}" class="${lang === "en" ? "active" : ""}" hreflang="en" lang="en"><span class="lg-full">English</span><span class="lg-short">EN</span></a>
         </div>
         <button class="menu-toggle" type="button" aria-label="${t("menu")}" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -113,6 +113,25 @@ const Layout = (() => {
 
 // Initial paint
 Layout.render();
+
+
+/* mobile tables: stamp data-labels so CSS can render cards */
+function stampTables() {
+  document.querySelectorAll("table.data").forEach((tbl) => {
+    const heads = [...tbl.querySelectorAll("thead th")].map((th) => th.textContent.trim());
+    tbl.querySelectorAll("tbody tr").forEach((tr) => {
+      [...tr.children].forEach((td, i) => { if (heads[i]) td.setAttribute("data-label", heads[i]); });
+    });
+  });
+}
+window.addEventListener("load", () => {
+  stampTables();
+  let timer = null;
+  new MutationObserver(() => {
+    clearTimeout(timer);
+    timer = setTimeout(stampTables, 120);
+  }).observe(document.getElementById("app") || document.body, { childList: true, subtree: true });
+});
 
 /* max-upgrade: scroll reveal */
 window.addEventListener("load", () => {
