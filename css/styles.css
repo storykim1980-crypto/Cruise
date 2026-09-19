@@ -2230,3 +2230,46 @@ img, svg, iframe, video { max-width: 100%; }
   table.data td:empty { display: none; }
   table.data tbody tr:hover { background: #fff; }
 }
+
+
+/* ============================================================
+   LAYOUT v9 — hero recomposition, dl-grid blow-out fix, header trim
+   ============================================================ */
+/* photo detail meta: CJK unbreakable strings must wrap, never blow the track */
+.dl-grid { grid-template-columns: 6.2rem minmax(0, 1fr); }
+.dl-grid dd { min-width: 0; overflow-wrap: anywhere; }
+.dl-grid dt { min-width: 0; }
+
+/* centered cinematic hero */
+.home-hero { min-height: clamp(420px, 62vh, 640px); display: flex; align-items: center; }
+.home-hero .hero-content { display: block; text-align: center; padding-bottom: 3.2rem; }
+.hero-eyebrow { margin: 0 auto 1.05rem; }
+.home-hero h1 { margin-left: auto; margin-right: auto; max-width: 22ch; }
+
+/* today's photo as a layered band under the hero */
+.potd-band { margin-top: -3.4rem; position: relative; z-index: 2; padding-bottom: 0.6rem; }
+.potd-card.potd-wide {
+  display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap;
+  padding: 1rem 1.3rem; border-radius: 14px;
+  background: #fff; border: 1px solid var(--oc-line);
+  backdrop-filter: none; box-shadow: 0 12px 34px rgba(13, 43, 69, 0.12);
+}
+.potd-wide .potd-label { margin: 0; color: var(--oc-600); }
+.potd-wide .potd-label .dot { background: var(--oc-600); box-shadow: 0 0 8px rgba(10, 111, 191, 0.5); }
+.potd-wide .potd-title { flex: 1 1 220px; color: var(--oc-deep); font-size: 1rem; }
+.potd-wide .potd-meta { color: var(--oc-muted); font-size: 0.78rem; }
+.potd-wide .potd-link { margin-left: auto; color: var(--oc-600); font-weight: 700; }
+.potd-card.potd-wide:hover { border-color: #aecde6; transform: translateY(-2px); }
+@media (max-width: 640px) {
+  .potd-band { margin-top: -2.6rem; }
+  .potd-wide .potd-link { margin-left: 0; }
+}
+
+/* header: extra headroom so the logo never clips */
+@media (max-width: 600px) {
+  .header-inner { gap: 0.45rem; }
+  .logo { gap: 0.45rem; }
+  .logo-mark { width: 34px; height: 34px; }
+  .logo-text strong { font-size: 0.92rem; letter-spacing: -0.01em; }
+  .container { padding-inline: 0.8rem; }
+}

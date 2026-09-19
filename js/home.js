@@ -58,7 +58,11 @@ pageApp("home", (root, { ships, photos, arrivals, categories, site, terminals, p
           <div class="hero-eyebrow"><span class="dot"></span> ${t("heroEyebrow")}</div>
           <h1>${heroTitle}</h1>
         </div>
-        <a class="potd-card" href="photo.html?id=${DS.esc(potd.id)}">
+      </div>
+    </section>
+    <section class="potd-band">
+      <div class="container">
+        <a class="potd-card potd-wide" href="photo.html?id=${DS.esc(potd.id)}">
           <div class="potd-label"><span class="dot"></span>${t("potd")} · ${I18N.formatDate(potd.dateTaken)}</div>
           <div class="potd-title">${DS.esc(potd.title)}</div>
           <div class="potd-meta">${DS.esc(potdLoc)} · ${DS.esc(potd.photographer)}</div>
