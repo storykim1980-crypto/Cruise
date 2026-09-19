@@ -112,3 +112,40 @@ pageApp("photos", (root, { ships, photos, categories, terminals }) => {
   apply();
   document.title = `${t("photosPageTitle")} | ${t("brand")}`;
 });
+
+/* max-upgrade: lightbox on thumbnail click */
+(() => {
+  const grid = document.getElementById("grid");
+  if (!grid) return;
+  let box = null;
+  function close() { if (box) { box.remove(); box = null; document.body.style.overflow = ""; } }
+  function open(p) {
+    close();
+    const ja = I18N.getLang() === "ja";
+    const loc = ja ? p.locationJa || p.location : p.location || p.locationJa;
+    box = document.createElement("div");
+    box.className = "lb-overlay";
+    box.innerHTML = `<button class="lb-close" aria-label="${I18N.t("closeLabel")}">&times;</button>
+      <figure>
+        <img src="${DS.esc(DS.asset(p.file))}" alt="${DS.esc(p.title)}">
+        <figcaption>
+          <strong>${DS.esc(p.title)}</strong>
+          <span>${DS.esc(loc)} · ${I18N.formatDate(p.dateTaken)}</span>
+          <a class="btn btn-primary btn-sm" href="photo.html?id=${DS.esc(p.id)}">${I18N.t("viewPhoto")} →</a>
+        </figcaption>
+      </figure>`;
+    box.addEventListener("click", (ev) => { if (ev.target === box || ev.target.closest(".lb-close")) close(); });
+    document.body.appendChild(box);
+    document.body.style.overflow = "hidden";
+  }
+  grid.addEventListener("click", (e) => {
+    const wrap = e.target.closest(".thumb-link .img-wrap");
+    if (!wrap) return;
+    const link = wrap.closest(".photo-thumb")?.querySelector("a.thumb-link");
+    if (!link) return;
+    e.preventDefault();
+    const id = new URLSearchParams((link.getAttribute("href") || "").split("?")[1] || "").get("id");
+    DS.load("photos").then((ps) => { const p = ps.find((x) => String(x.id) === String(id)); if (p) open(p); });
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+})();

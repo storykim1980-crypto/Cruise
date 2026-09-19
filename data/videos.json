@@ -1,0 +1,46 @@
+[
+  {
+    "id": "v-001",
+    "ytId": "OP_tgR6MDRw",
+    "title": "東京国際クルーズターミナル早朝入港 ―  Seattleからの越太平洋クルーズ",
+    "titleEn": "Early Morning Arrival at Tokyo International Cruise Terminal — Trans-Pacific from Seattle",
+    "channel": "Cruise Travel Vlog",
+    "date": "2025-11-29",
+    "location": "東京国際クルーズターミナル",
+    "locationEn": "Tokyo International Cruise Terminal",
+    "shipId": null
+  },
+  {
+    "id": "v-002",
+    "ytId": "eqnDwFDJUok",
+    "title": "ダイヤモンド・プリンセス 横浜乗船日",
+    "titleEn": "Diamond Princess Embarkation Day in Yokohama",
+    "channel": "Princess Cruises Vlog",
+    "date": "2025-04-15",
+    "location": "横浜港大黒ふ頭",
+    "locationEn": "Yokohama Daikoku Pier",
+    "shipId": "diamond-princess"
+  },
+  {
+    "id": "v-003",
+    "ytId": "G68AQI_VEX8",
+    "title": "ダイヤモンド・プリンセス 日本一周クルーズ 10日",
+    "titleEn": "Cruising Japan on the Diamond Princess — 10 Days",
+    "channel": "Cruise Travel Vlog",
+    "date": "2026-03-16",
+    "location": "横浜・東京湾",
+    "locationEn": "Yokohama & Tokyo Bay",
+    "shipId": "diamond-princess"
+  },
+  {
+    "id": "v-004",
+    "ytId": "1__I_n6HGys",
+    "title": "ダイヤモンド・プリンセス 横浜出港 ― 初プリンセスクルーズ",
+    "titleEn": "Diamond Princess Yokohama Sailaway — First Princess Cruise",
+    "channel": "First Cruise Diary",
+    "date": "2023-10-22",
+    "location": "横浜港",
+    "locationEn": "Port of Yokohama",
+    "shipId": "diamond-princess"
+  }
+]

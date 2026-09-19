@@ -43,6 +43,7 @@ const Layout = (() => {
         <nav class="nav" id="main-nav">
           <a href="index.html" data-nav="home">${t("nav.home")}</a>
           <a href="photos.html" data-nav="photos">${t("nav.photos")}</a>
+          <a href="videos.html" data-nav="videos">${t("nav.videos")}</a>
           <a href="ships.html" data-nav="ships">${t("nav.ships")}</a>
           <a href="photographers.html" data-nav="photographers">${t("nav.photographers")}</a>
           <a href="schedule.html" data-nav="schedule">${t("nav.schedule")}</a>
@@ -77,6 +78,7 @@ const Layout = (() => {
             <h4>${t("footerBrowse")}</h4>
             <a href="photos.html">${t("footerLatest")}</a>
             <a href="photos.html?sort=popular">${t("footerPopular")}</a>
+            <a href="videos.html">${t("nav.videos")}</a>
             <a href="ships.html">${t("footerShips")}</a>
             <a href="photographers.html">${t("contributors")}</a>
             <a href="photos.html">${t("footerCats")}</a>
@@ -111,3 +113,16 @@ const Layout = (() => {
 
 // Initial paint
 Layout.render();
+
+/* max-upgrade: scroll reveal */
+window.addEventListener("load", () => {
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(
+    (es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("on"); io.unobserve(en.target); } }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll(".photo-thumb, .dir-card, .ph-card, .cat-card, .vid-card, .potd-card").forEach((el) => {
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+});

@@ -1,6 +1,6 @@
-/* Tokyo Cruise Log service worker — build 2609182348.e96fc6 */
-const CACHE = "tcl-2609182348.e96fc6";
-const CORE = ["./", "./index.html", "./en/", "./css/styles.css?v=2609182348.e96fc6", "./js/i18n.js?v=2609182348.e96fc6", "./js/layout.js?v=2609182348.e96fc6", "./js/data.js?v=2609182348.e96fc6"];
+/* Tokyo Cruise Log service worker — build 2609190000.0fcde8 */
+const CACHE = "tcl-2609190000.0fcde8";
+const CORE = ["./", "./index.html", "./en/", "./css/styles.css?v=2609190000.0fcde8", "./js/i18n.js?v=2609190000.0fcde8", "./js/layout.js?v=2609190000.0fcde8", "./js/data.js?v=2609190000.0fcde8"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
