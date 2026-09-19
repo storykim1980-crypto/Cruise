@@ -2273,3 +2273,22 @@ img, svg, iframe, video { max-width: 100%; }
   .logo-text strong { font-size: 0.92rem; letter-spacing: -0.01em; }
   .container { padding-inline: 0.8rem; }
 }
+
+
+/* ============================================================
+   AUDIT v10 — kill the 720px table floor + grid tuning
+   (full-page mobile sweep: schedule / ships / photos / terminals)
+   ============================================================ */
+@media (max-width: 760px) {
+  table.data { min-width: 0; }
+  table.data td { flex-wrap: wrap; }
+  table.data td > * { min-width: 0; overflow-wrap: anywhere; }
+  .toolbar input { min-width: 0; }
+  .ship-specs-table, .table-wrap { min-width: 0; }
+}
+@media (max-width: 900px) {
+  .photo-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+}
